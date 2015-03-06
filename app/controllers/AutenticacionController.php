@@ -46,7 +46,7 @@ class AutenticacionController extends BaseController {
             if (Auth::attempt($userdata, Input::get('remember'))) {
                 $respuesta->validacion = true;
                 $respuesta->mensaje='Usuario correcto';
-                $respuesta->redirect = Session::get('url.intended', url('admin'));
+                $respuesta->redirect = Session::get('url.intended', url('/'));
 
 
             } else {
