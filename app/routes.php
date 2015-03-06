@@ -11,7 +11,27 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
+Route::group(['before'=>'auth'], function() {
+
+    /**
+     * Login antes de entrar al dashboard
+     *
+     */
+
+
+        Route::get('/', 'HomeController@showWelcome');
+
+
+
+
 });
+
+
+// route para mostrar login
+Route::get('login', 'AutenticacionController@showLogin');
+
+// route para procesar el form
+Route::post('login', 'AutenticacionController@doLogin');
+
+//route para desloguear
+Route::get('logout', 'AutenticacionController@doLogout');
