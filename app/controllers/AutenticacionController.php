@@ -13,7 +13,7 @@ class AutenticacionController extends BaseController {
         }
 
         $data['title'] = 'Login';
-        $data['breadcrumb'] = FunctionsHelpers::breadcrumb(array('Admin'=>'/admin',$data['title']=>null));
+
         $view = View::make('pages.login',$data);
 
         return $view;
