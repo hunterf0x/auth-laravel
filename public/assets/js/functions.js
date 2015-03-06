@@ -5,7 +5,7 @@ $(function() {
 
     loadFormAjax();
 
-    loadUploaders();
+
 
 });
 
